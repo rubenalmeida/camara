@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Principal
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/3dh7CcG7RYaW98zxNRE2_wp-image-142634210.jpg) no-repeat center;background-size:cover;" id="page2">
+  <div id="principal-container2" class="col">
+    <div class="col">
+      <img src="assets/img/13EpJJbRQsqT9zkyOd4L_legislaturas.png" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+    </div>
+  </div>
+  <div id="principal-container3">
+    <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;" *ngFor="let partido of partidos">
+      <ion-card >
+        <ion-card-content >
+          {{partido.id}}
+          {{partido.nome}}
+          {{partido.sigla}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
