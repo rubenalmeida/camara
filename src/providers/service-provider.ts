@@ -24,7 +24,7 @@ export class ServiceProvider {
   }
 
   getPartidos() {
-    return this.http.get(this.api + 'partidos?ordem=ASC&ordenarPor=sigla').map(res => res.json());
+    return this.http.get(this.api + 'partidos?itens=100&ordem=ASC&ordenarPor=sigla').map(res => res.json());
   }
 
   getEventos() {
