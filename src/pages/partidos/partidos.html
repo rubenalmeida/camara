@@ -14,54 +14,28 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding style="background:url(assets/img/oPwHHWvHRkC7vrdrBpUV_wp-image-142634210.jpg) no-repeat center;background-size:cover;" id="page3">
-  <ion-card id="partidos-card21">
-    <ion-list>
-      <form id="partidos-form2">
-        <ion-searchbar placeholder="Pesquisar Partidos" name="" id="partidos-search2"></ion-searchbar>
-      </form>
-      <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
-        <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
-      </div>
-      <ion-item color="none" on-click="goToPerfilPartido()" id="partidos-list-item5">
+
+
+
+  <!--<ion-card id="partidos-card21">-->
+    <!--<ion-list>-->
+      <!--<form id="partidos-form2">-->
+        <!--<ion-searchbar placeholder="Pesquisar Partidos" name="" id="partidos-search2"></ion-searchbar>-->
+      <!--</form>-->
+      <!--<div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;"-->
+           <!--&gt;-->
+
+        <!--<i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>-->
+      <!--</div>-->
+      <ion-item color="none" on-click="goToPerfilPartido()" id="partidos-list-item5" *ngFor="let partido of partidos">
         <ion-thumbnail item-left>
           <img />
         </ion-thumbnail>
         <h2>
-          PDT
+          {{partido.sigla}}
         </h2>
       </ion-item>
-      <ion-item color="none" on-click="goToPerfilPartido()" id="partidos-list-item6">
-        <ion-thumbnail item-left>
-          <img />
-        </ion-thumbnail>
-        <h2>
-          PDT
-        </h2>
-      </ion-item>
-      <ion-item color="none" id="partidos-list-item7">
-        <ion-thumbnail item-left>
-          <img />
-        </ion-thumbnail>
-        <h2>
-          PDT
-        </h2>
-      </ion-item>
-      <ion-item color="none" id="partidos-list-item8">
-        <ion-thumbnail item-left>
-          <img />
-        </ion-thumbnail>
-        <h2>
-          PDT
-        </h2>
-      </ion-item>
-      <ion-item color="none" id="partidos-list-item9">
-        <ion-thumbnail item-left>
-          <img />
-        </ion-thumbnail>
-        <h2>
-          PDT
-        </h2>
-      </ion-item>
-    </ion-list>
-  </ion-card>
+
+    <!--</ion-list>-->
+  <!--</ion-card>-->
 </ion-content>
