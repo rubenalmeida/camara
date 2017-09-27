@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {LegislaturaPage} from '../legislatura/legislatura';
+import { ServiceProvider } from "../../providers/service-provider";
 
 @Component({
   selector: 'page-blocos',
@@ -7,7 +9,19 @@ import { NavController } from 'ionic-angular';
 })
 export class BlocosPage {
 
-  constructor(public navCtrl: NavController) {
+  blocos = [];
+  constructor(public navCtrl: NavController, public service: ServiceProvider) {
   }
-  
+
+  ionViewDidLoad(){
+    this.service.getBlocos().subscribe(data => {
+      console.log(data.dados);
+      this.blocos = data.dados;
+    });
+  }
+
+  goToLegislatura(idLegislatura){
+    this.navCtrl.push(LegislaturaPage, idLegislatura);
+  }
+
 }

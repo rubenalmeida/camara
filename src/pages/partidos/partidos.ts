@@ -25,8 +25,9 @@ export class PartidosPage {
   }
 
   goToPerfilPartido(params){
+    console.log(params);
     if (!params) params = {};
-    this.navCtrl.push(PerfilPartidoPage);
+    this.navCtrl.push(PerfilPartidoPage, params);
   }
 
 

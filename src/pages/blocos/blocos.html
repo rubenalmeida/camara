@@ -16,20 +16,12 @@
 <ion-content padding style="background:url(assets/img/mUnucAtToK5MdnuwNsjF_wp-image-142634210.jpg) no-repeat center;background-size:cover;" id="page6">
   <ion-list id="blocos-list3">
     <ion-searchbar placeholder="Pesquisar Blocos" name="" id="blocos-search1"></ion-searchbar>
-    <ion-item-divider color="light" id="blocos-list-item-divider1">
-      Blocos: PT , PP
+    <ion-item-divider *ngIf="blocos.length == 0">
+      <ion-spinner name="crescent" ></ion-spinner>
     </ion-item-divider>
-    <ion-item-divider color="light" id="blocos-list-item-divider2">
-      Blocos: PT , PP
-    </ion-item-divider>
-    <ion-item-divider color="light" id="blocos-list-item-divider3">
-      Blocos: PT , PP
-    </ion-item-divider>
-    <ion-item-divider color="light" id="blocos-list-item-divider4">
-      Blocos: PT , PP
-    </ion-item-divider>
-    <ion-item-divider color="light" id="blocos-list-item-divider5">
-      Blocos: PT , PP
+
+    <ion-item-divider color="light" *ngFor="let bloco of blocos" on-click="goToLegislatura(bloco.id)">
+      {{bloco.nome}}
     </ion-item-divider>
   </ion-list>
 </ion-content>

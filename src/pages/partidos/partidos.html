@@ -27,7 +27,7 @@
 
         <!--<i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>-->
       <!--</div>-->
-      <ion-item color="none" on-click="goToPerfilPartido()" id="partidos-list-item5" *ngFor="let partido of partidos">
+      <ion-item color="none" on-click="goToPerfilPartido(partido.id)" id="partidos-list-item5" *ngFor="let partido of partidos">
         <ion-thumbnail item-left>
           <img />
         </ion-thumbnail>

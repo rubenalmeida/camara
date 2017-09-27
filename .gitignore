@@ -49,3 +49,4 @@ resources/
 src/
 tsconfig.json
 tslint.json
+!/src/providers/service-provider.ts

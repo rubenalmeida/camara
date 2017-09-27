@@ -14,12 +14,12 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding style="background:url(assets/img/oPwHHWvHRkC7vrdrBpUV_wp-image-142634210.jpg) no-repeat center;background-size:cover;" id="page15">
-  <ion-list id="perfilPartido-list5">
-    <ion-item id="perfilPartido-list-item-container4">
+  <ion-list *ngFor="let detalhe of partido">
+    <ion-item>
       <div id="perfilPartido-markdown4" style="text-align:center;" class="show-list-numbers-and-dots">
         <p style="margin-top:0px;color:#000000;">
           <strong>
-            PDT
+           {{detalhe.nome}}
           </strong>
         </p>
       </div>
