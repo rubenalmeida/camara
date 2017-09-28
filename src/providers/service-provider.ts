@@ -25,6 +25,13 @@ export class ServiceProvider {
     return this.http.get(this.api + 'partidos?itens=100&ordem=ASC&ordenarPor=sigla').map(res => res.json());
   }
 
+  getPerfilPartido(idPartido) {
+    if (!idPartido) {
+      return false;
+    }
+    return this.http.get(this.api + 'partidos/' + idPartido).map(res => res.json());
+  }
+
   getEventos(filtros = '') {
     return this.http.get(this.api + 'eventos?ordem=ASC&ordenarPor=id').map(res => res.json());
   }
@@ -34,7 +41,14 @@ export class ServiceProvider {
   }
 
   getDeputados(filtros = '') {
-    return this.http.get(this.api + '').map(res => res.json());
+    return this.http.get(this.api + 'deputados?ordem=ASC&ordenarPor=nome').map(res => res.json());
+  }
+
+  getPerfilDeputado(idDeputado) {
+    if (!idDeputado) {
+      return false;
+    }
+    return this.http.get(this.api + 'deputados/' + idDeputado).map(res => res.json());
   }
 
   getFrentes(filtros = '') {
@@ -47,17 +61,6 @@ export class ServiceProvider {
 
   getOrgaos(filtros = '') {
     return this.http.get(this.api + 'orgaos' + filtros).map(res => res.json());
-  }
-
-  getPerfilDeputado(idDeputado) {
-    if (!idDeputado) {
-      return false;
-    }
-    return this.http.get(this.api + 'deputado/' + idDeputado).map(res => res.json());
-  }
-
-  getPerfilPartido(idPartido) {
-    return this.http.get(this.api + 'partidos/' + idPartido).map(res => res.json());
   }
 
   getProposicoes(filtros = '') {

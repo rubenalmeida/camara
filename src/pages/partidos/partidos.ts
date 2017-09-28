@@ -30,7 +30,4 @@ export class PartidosPage {
     this.navCtrl.push(PerfilPartidoPage, params);
   }
 
-
 }
-
-

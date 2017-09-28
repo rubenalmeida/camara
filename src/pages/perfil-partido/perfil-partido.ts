@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ServiceProvider } from "../../providers/service-provider";
 
 @Component({
@@ -8,12 +8,10 @@ import { ServiceProvider } from "../../providers/service-provider";
 })
 export class PerfilPartidoPage {
 
-  partido:any;
+  partido: any;
 
   constructor(public navCtrl: NavController, public params: NavParams, public service: ServiceProvider) {
   }
-
-
 
   ionViewDidLoad(){
     console.log(this.params.data);

@@ -26,14 +26,18 @@
     </ion-item>
   </ion-list>
   <div>
-    <img src="assets/img/60h5SXipQb2hMB24Zn09_ppassf.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+    <img src="{{urlFoto}}" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
   </div>
   <ion-card id="perfilPartido-card23">
     <ion-list>
       <ion-item id="perfilPartido-list-item-container7">
         <div id="perfilPartido-markdown7" style="text-align:center;" class="show-list-numbers-and-dots">
           <p style="margin-top:0px;color:#000000;">
-            Partido dos Trabalhadores
+            {{detalhe.nome}}
+          </p>
+
+          <p style="margin-top:0px;color:#000000;">
+            {{detalhe.sigla}}
           </p>
         </div>
       </ion-item>

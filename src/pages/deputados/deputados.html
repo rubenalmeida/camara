@@ -14,56 +14,19 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding style="background:url(assets/img/rmwfKvrJRXmrj4o4x17y_wp-image-142634210.jpg) no-repeat center;background-size:cover;" id="page4">
+
   <ion-list id="deputados-list1">
     <ion-searchbar placeholder="Pesquisar Deputados" name="" id="deputados-search4"></ion-searchbar>
-    <ion-item color="none" on-click="goToPerfilDeputado()" id="deputados-list-item10">
+
+
+    <ion-item color="none" on-click="goToPerfilDeputado(deputado.id)" id="deputados-list-item10" *ngFor="let deputado of deputados">
       <ion-avatar item-left>
-        <img />
+        <img src="{{deputado.urlFoto}}" />
       </ion-avatar>
       <h2>
-        João de Deus
+        {{deputado.nome}}
       </h2>
     </ion-item>
-    <ion-item color="none" on-click="goToPerfilDeputado()" id="deputados-list-item11">
-      <ion-avatar item-left>
-        <img />
-      </ion-avatar>
-      <h2>
-        João de Deus
-      </h2>
-    </ion-item>
-    <ion-item color="none" on-click="goToPerfilDeputado()" id="deputados-list-item12">
-      <ion-avatar item-left>
-        <img />
-      </ion-avatar>
-      <h2>
-        João de Deus
-      </h2>
-    </ion-item>
-    <ion-item color="none" id="deputados-list-item13">
-      <ion-avatar item-left>
-        <img />
-      </ion-avatar>
-      <h2>
-        João de Deus
-      </h2>
-    </ion-item>
-    <ion-item color="none" id="deputados-list-item14">
-      <ion-avatar item-left>
-        <img />
-      </ion-avatar>
-      <h2>
-        João de Deus
-      </h2>
-    </ion-item>
-    <ion-item color="none" id="deputados-list-item15">
-      <ion-avatar item-left>
-        <img />
-      </ion-avatar>
-      <h2>
-        João de Deus
-      </h2>
-    </ion-item>
-    <ion-searchbar placeholder="" name="" id="deputados-search3"></ion-searchbar>
+
   </ion-list>
 </ion-content>

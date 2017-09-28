@@ -13,30 +13,81 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding style="background:url(assets/img/oPwHHWvHRkC7vrdrBpUV_wp-image-142634210.jpg) no-repeat center;background-size:cover;" id="page16">
+<ion-content padding
+             style="background:url(assets/img/oPwHHWvHRkC7vrdrBpUV_wp-image-142634210.jpg) no-repeat center;background-size:cover;"
+             id="page16">
   <ion-list id="perfilDeputado-list6">
     <ion-item id="perfilDeputado-list-item-container8">
       <div id="perfilDeputado-markdown8" style="text-align:center;" class="show-list-numbers-and-dots">
         <p style="margin-top:0px;color:#000000;">
           <strong>
-            José Lula
+            {{deputado}}
           </strong>
         </p>
       </div>
     </ion-item>
   </ion-list>
-  <div>
-    <img src="assets/img/60h5SXipQb2hMB24Zn09_ppassf.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <img src="{{detalhe.urlFoto}}"
+               style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+              <p style="margin-top:0px;color:#000000;">
+                {{detalhe.nome}}
+              </p>
+            </div>
+          </ion-item>
+
+          <ion-item>
+            <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+              <p style="margin-top:0px;color:#000000;">
+                {{detalhe.siglaPartido}}
+              </p>
+            </div>
+          </ion-item>
+
+          <ion-item>
+            <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+              <p style="margin-top:0px;color:#000000;">
+                {{detalhe.siglaUf}}
+              </p>
+            </div>
+          </ion-item>
+
+          <ion-item>
+            <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+              <p style="margin-top:0px;color:#000000;">
+                {{detalhe.situacao}}
+              </p>
+            </div>
+          </ion-item>
+
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <ion-card id="perfilDeputado-card24">
     <ion-list>
       <ion-item id="perfilDeputado-list-item-container9">
         <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
           <p style="margin-top:0px;color:#000000;">
-            Partido dos Trabalhadores
+            {{deputado.nomeCivil}}
           </p>
         </div>
       </ion-item>
     </ion-list>
   </ion-card>
+
+  <button ion-button block>Despesas</button>
+
 </ion-content>
