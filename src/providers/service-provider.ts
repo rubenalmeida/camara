@@ -26,9 +26,6 @@ export class ServiceProvider {
   }
 
   getPerfilPartido(idPartido) {
-    if (!idPartido) {
-      return false;
-    }
     return this.http.get(this.api + 'partidos/' + idPartido).map(res => res.json());
   }
 
@@ -41,13 +38,10 @@ export class ServiceProvider {
   }
 
   getDeputados(filtros = '') {
-    return this.http.get(this.api + 'deputados?ordem=ASC&ordenarPor=nome').map(res => res.json());
+    return this.http.get(this.api + 'deputados?ordem=ASC&ordenarPor=nome'+ filtros).map(res => res.json());
   }
 
   getPerfilDeputado(idDeputado) {
-    if (!idDeputado) {
-      return false;
-    }
     return this.http.get(this.api + 'deputados/' + idDeputado).map(res => res.json());
   }
 

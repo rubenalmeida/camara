@@ -13,20 +13,30 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding style="background:url(assets/img/rmwfKvrJRXmrj4o4x17y_wp-image-142634210.jpg) no-repeat center;background-size:cover;" id="page4">
+<ion-content padding
+             style="background:url(assets/img/rmwfKvrJRXmrj4o4x17y_wp-image-142634210.jpg) no-repeat center;background-size:cover;"
+             id="page4">
 
   <ion-list id="deputados-list1">
-    <ion-searchbar placeholder="Pesquisar Deputados" name="" id="deputados-search4"></ion-searchbar>
+    <ion-searchbar placeholder="Pesquisar Deputados" [(ngModel)]="searchQuery" [showCancelButton]="shouldShowCancel"
+                   (ionInput)="getItems($event)"></ion-searchbar>
 
+    <ion-item-divider *ngIf="deputados.length == 0">
+      <ion-spinner name="crescent"></ion-spinner>
+    </ion-item-divider>
 
-    <ion-item color="none" on-click="goToPerfilDeputado(deputado.id)" id="deputados-list-item10" *ngFor="let deputado of deputados">
+    <ion-item color="none" on-click="goToPerfilDeputado(deputado.id)" *ngFor="let deputado of deputados">
       <ion-avatar item-left>
-        <img src="{{deputado.urlFoto}}" />
+        <img src="{{deputado.urlFoto}}"/>
       </ion-avatar>
       <h2>
         {{deputado.nome}}
       </h2>
     </ion-item>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
   </ion-list>
 </ion-content>

@@ -16,10 +16,10 @@ export class PerfilDeputadoPage {
   }
 
   ionViewDidLoad(){
-    console.log(this.params.data);
-    this.service.getPerfilDeputado(this.params.data).subscribe(data =>{
+    let id = this.params.data;
+    this.service.getPerfilDeputado(id).subscribe(data => {
       console.log(data.dados);
-      console.log(data.dados.ultimoStatus)
+      console.log(data.dados.ultimoStatus);
       this.deputado = data.dados ;
       this.detalhe = data.dados.ultimoStatus;
     });
