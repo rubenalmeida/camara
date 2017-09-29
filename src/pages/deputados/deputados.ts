@@ -53,6 +53,8 @@ export class DeputadosPage {
       this.deputados = this.tmpDeputados.filter((item) => {
         return (item['nome'].toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
+    } else {
+      this.deputados = this.tmpDeputados;
     }
   }
 
