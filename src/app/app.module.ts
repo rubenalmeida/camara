@@ -9,20 +9,17 @@ import { PartidosPage } from '../pages/partidos/partidos';
 import { PerfilPartidoPage } from '../pages/perfil-partido/perfil-partido';
 import { PerfilDeputadoPage } from '../pages/perfil-deputado/perfil-deputado';
 import { DeputadosPage } from '../pages/deputados/deputados';
-import { LegislaturaPage } from '../pages/legislatura/legislatura';
-import { BlocosPage } from '../pages/blocos/blocos';
+import { TVCMaraPage } from '../pages/t-vcmara/t-vcmara';
+import { NotCiasPage } from '../pages/not-cias/not-cias';
 import { OrgaosPage } from '../pages/orgaos/orgaos';
-import { FrentesPage } from '../pages/frentes/frentes';
 import { EventosPage } from '../pages/eventos/eventos';
 import { ProposicoesPage } from '../pages/proposicoes/proposicoes';
 import { VotacoesPage } from '../pages/votacoes/votacoes';
-import { ReferenciasPage } from '../pages/referencias/referencias';
-import { AtualizacoesPage } from '../pages/atualizacoes/atualizacoes';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
-import { Tab7DefaultPagePage } from '../pages/tab7default-page/tab7default-page';
-
-import { ServiceProvider } from "../providers/service-provider";
-
+import { LoginPage } from '../pages/login/login';
+import { DespesasPage } from '../pages/despesas/despesas';
+import { BemVindoPage } from '../pages/bem-vindo/bem-vindo';
+import {ServiceProvider} from '../providers/service-provider';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,17 +32,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PerfilPartidoPage,
     PerfilDeputadoPage,
     DeputadosPage,
-    LegislaturaPage,
-    BlocosPage,
+    TVCMaraPage,
+    NotCiasPage,
     OrgaosPage,
-    FrentesPage,
     EventosPage,
     ProposicoesPage,
     VotacoesPage,
-    ReferenciasPage,
-    AtualizacoesPage,
     TabsControllerPage,
-    Tab7DefaultPagePage
+    LoginPage,
+    DespesasPage,
+    BemVindoPage
   ],
   imports: [
     BrowserModule,
@@ -60,17 +56,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PerfilPartidoPage,
     PerfilDeputadoPage,
     DeputadosPage,
-    LegislaturaPage,
-    BlocosPage,
+    TVCMaraPage,
+    NotCiasPage,
     OrgaosPage,
-    FrentesPage,
     EventosPage,
     ProposicoesPage,
     VotacoesPage,
-    ReferenciasPage,
-    AtualizacoesPage,
     TabsControllerPage,
-    Tab7DefaultPagePage
+    LoginPage,
+    DespesasPage,
+    BemVindoPage
   ],
   providers: [
     StatusBar,

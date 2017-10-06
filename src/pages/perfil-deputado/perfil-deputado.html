@@ -13,20 +13,37 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
+
+
 <ion-content padding
              style="background:url(assets/img/oPwHHWvHRkC7vrdrBpUV_wp-image-142634210.jpg) no-repeat center;background-size:cover;"
              id="page16">
-  <ion-list id="perfilDeputado-list6">
-    <ion-item id="perfilDeputado-list-item-container8">
-      <div id="perfilDeputado-markdown8" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          <strong>
-            {{deputado}}
-          </strong>
-        </p>
-      </div>
-    </ion-item>
-  </ion-list>
+
+  <div padding>
+    <ion-segment [(ngModel)]="deputado">
+      <ion-segment-button value="perfil">
+        Perfil
+      </ion-segment-button>
+      <ion-segment-button value="despesas">
+        Despesas
+      </ion-segment-button>
+      <ion-segment-button value="proposicoes">
+        Proposições
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <!--<ion-list id="perfilDeputado-list6">-->
+    <!--<ion-item id="perfilDeputado-list-item-container8">-->
+    <!---->
+      <!--<div id="perfilDeputado-markdown8" style="text-align:center;" class="show-list-numbers-and-dots">-->
+        <!--<p style="margin-top:0px;color:#000000;">-->
+          <!--<strong>-->
+            <!--{{deputado}}-->
+          <!--</strong>-->
+        <!--</p>-->
+      <!--</div>-->
+    <!--</ion-item>-->
+  <!--</ion-list>-->
 
   <ion-grid>
     <ion-row>
@@ -50,7 +67,8 @@
           <ion-item>
             <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
               <p style="margin-top:0px;color:#000000;">
-                {{detalhe.siglaPartido}}
+
+                <img src="http://www.camara.leg.br/internet/Deputado/img/partidos/{{detalhe.siglaPartido}}.gif" />
               </p>
             </div>
           </ion-item>

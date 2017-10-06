@@ -4,7 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 
+
+import { BemVindoPage } from '../pages/bem-vindo/bem-vindo';
 import { PrincipalPage } from '../pages/principal/principal';
+import {TabsControllerPage} from "../pages/tabs-controller/tabs-controller";
 
 
 
@@ -12,8 +15,13 @@ import { PrincipalPage } from '../pages/principal/principal';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) navCtrl: Nav;
-    rootPage:any = PrincipalPage;
+
+  @ViewChild(Nav) nav: Nav;
+
+  rootPage = TabsControllerPage;
+
+  // @ViewChild(Nav) navCtrl: Nav;
+  //   rootPage:any = BemVindoPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

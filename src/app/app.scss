@@ -14,3 +14,100 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.toolbar-background-md {
+  border-color: #b2b2b2;
+  background: rgba(248, 248, 248, 0.25);
+}
+
+.toolbar-title-md {
+  padding: 0 12px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.item-md {
+  padding-left: 16px;
+  padding-right: 0;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: none;
+  color: #fff;
+  background-color: #38648c;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+ion-list {
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style-type: none;
+  background: #38648c;
+}
+
+.toolbar-background-md{
+  border-color: #b2b2b2;
+  background: rgb(64, 121, 142);
+}
+
+.tabs-md .tab-button-icon {
+  margin-top: 1px;
+  min-width: 2.4rem;
+  font-size: 2.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform-origin: 50% 150%;
+  transform-origin: 50% 150%;
+}
+
+.tabs-md .tabbar {
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+  color: #ffffff;
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0);
+}
+
+.segment-md .segment-button {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 0;
+  height: 4.2rem;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 4rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: transparent;
+  opacity: 0.7;
+  -webkit-transition: 100ms all linear;
+  transition: 100ms all linear;
+  padding: 0 6px;
+}
+
+.tabs-md .tab-button[aria-selected=true] {
+  color: #ffffff;
+  padding: 0;
+}
+
+.tabs-md .tab-button {
+  min-height: 5.6rem;
+  font-weight: normal;
+  color: rgba(216, 216, 216, 0.7);
+  padding: 0;
+}
