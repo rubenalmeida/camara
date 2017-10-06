@@ -14,19 +14,22 @@ export class DeputadosPage {
   searchQuery: string = '';
   deputados = [];
   tmpDeputados = [];
-
+  pagina = 1;
   constructor(public navCtrl: NavController, public service: ServiceProvider) {
-    this.getDeputados();
+    let array = [];
+    for(let i = 1; i < 7;  i++){
+      this.service.getDeputados(i).subscribe(data => {
+        array.push.apply(array, data.dados);
+      });
+      console.log(array);
+    }
+    this.deputados = array;
   }
 
 
-  getDeputados(count = '') {
-     this.service.getDeputados(count).subscribe(data => {
-      console.log(data.dados);
-       this.tmpDeputados =  data.dados;
-       this.deputados = this.tmpDeputados;
-
-     })
+  ionViewDidLoad() {
+    //this.deputados = this.tmpDeputados;
+    //console.log(this.deputados);
   }
 
   goToPerfilDeputado(params) {
@@ -36,12 +39,20 @@ export class DeputadosPage {
   }
 
   doInfinite(infiniteScroll) {
-    let newCount = this.deputados.length + 10;
+    let length = this.deputados.length;
+    let newCount = length + 10;
+    if(length >= 50){
+      this.pagina++;
+      newCount = 10
+    }
+    let filtros = '&itens=' + newCount + '&pagina=' + this.pagina;
+
     setTimeout(() => {
-      this.getDeputados('&itens=' + newCount);
+      //this.getDeputados(filtros);
       infiniteScroll.complete();
-    }, 500);
+    }, 1000);
   }
+
 
   getItems(ev: any) {
     // Reset items back to all of the items
