@@ -32,18 +32,7 @@
       </ion-segment-button>
     </ion-segment>
   </div>
-  <!--<ion-list id="perfilDeputado-list6">-->
-    <!--<ion-item id="perfilDeputado-list-item-container8">-->
-    <!---->
-      <!--<div id="perfilDeputado-markdown8" style="text-align:center;" class="show-list-numbers-and-dots">-->
-        <!--<p style="margin-top:0px;color:#000000;">-->
-          <!--<strong>-->
-            <!--{{deputado}}-->
-          <!--</strong>-->
-        <!--</p>-->
-      <!--</div>-->
-    <!--</ion-item>-->
-  <!--</ion-list>-->
+
 
   <ion-grid>
     <ion-row>
@@ -56,15 +45,16 @@
 
       <ion-col>
         <ion-list>
-          <ion-item>
-            <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+          <ion-item style="text-align:center; background: #fff; padding: 2px;">
+            <div id="perfilDeputado-markdown9" style="text-align:center;"
+                 class="show-list-numbers-and-dots">
               <p style="margin-top:0px;color:#000000;">
                 {{detalhe.nome}}
               </p>
             </div>
           </ion-item>
 
-          <ion-item>
+          <ion-item style="text-align:center; background: #fff; padding: 2px;">
             <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
               <p style="margin-top:0px;color:#000000;">
 
@@ -73,7 +63,7 @@
             </div>
           </ion-item>
 
-          <ion-item>
+          <ion-item style="text-align:center; background: #fff; padding: 2px;">
             <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
               <p style="margin-top:0px;color:#000000;">
                 {{detalhe.siglaUf}}
@@ -81,7 +71,7 @@
             </div>
           </ion-item>
 
-          <ion-item>
+          <ion-item style="text-align:center; background: #fff; padding: 2px;">
             <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
               <p style="margin-top:0px;color:#000000;">
                 {{detalhe.situacao}}
@@ -94,17 +84,40 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-card id="perfilDeputado-card24">
-    <ion-list>
-      <ion-item id="perfilDeputado-list-item-container9">
-        <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
-            {{deputado.nomeCivil}}
-          </p>
-        </div>
-      </ion-item>
-    </ion-list>
-  </ion-card>
+  <ion-grid>
+  <ion-row>
+ <ion-col>
+    <ion-item style="text-align:center; background: #fff; padding: 2px;">
+      <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+        <p style="margin-top:0px;color:#000000;">
+          {{deputado.nomeCivil}}
+        </p>
+      </div>
+    </ion-item>
+ </ion-col>
+  <ion-col>
+  <ion-item style="text-align:center; background: #fff; padding: 2px;">
+    <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="margin-top:0px;color:#000000;">
+       Condição Eleitoral: {{detalhe.condicaoEleitoral}}
+      </p>
+    </div>
+  </ion-item>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+
+
+  <ion-item style="text-align:center; background: #fff; padding: 2px;">
+    <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="margin-top:0px;color:#000000;">
+        Escolaridade: {{deputado.escolaridade}}
+      </p>
+    </div>
+  </ion-item>
+
+
+
 
   <button ion-button block>Despesas</button>
 

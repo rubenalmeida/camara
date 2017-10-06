@@ -3,15 +3,18 @@ import {NavController, LoadingController } from 'ionic-angular';
 import {PerfilDeputadoPage} from '../perfil-deputado/perfil-deputado';
 // import { PerfilPartidoPage } from '../perfil-partido/perfil-partido';
 import {ServiceProvider} from "../../providers/service-provider";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
+
 
 @Component({
   selector: 'page-deputados',
   templateUrl: 'deputados.html'
 })
+
+
 export class DeputadosPage {
 
   searchQuery: string = '';
+
   deputados = [];
   tmpDeputados = [];
   pagina = 1;
@@ -20,7 +23,7 @@ export class DeputadosPage {
   constructor(public navCtrl: NavController, public service: ServiceProvider, public loadingCtrl: LoadingController) {
     let array = [];
     for(let i = 1; i < 7;  i++){
-      this.service.getDeputados(i).subscribe(data => {
+      this.service.getDeputados(i).subscribe(data  => {
         array.push.apply(array, data.dados);
       });
     }

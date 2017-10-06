@@ -28,9 +28,9 @@
         <!--<i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>-->
       <!--</div>-->
       <ion-item color="none" on-click="goToPerfilPartido(partido.id)" id="partidos-list-item5" *ngFor="let partido of partidos">
-        <ion-thumbnail item-left>
+        <ion-avatar item-left>
           <img src="http://www.camara.leg.br/internet/Deputado/img/partidos/{{partido.sigla}}.gif" />
-        </ion-thumbnail>
+        </ion-avatar>
         <h2>
           {{partido.sigla}}
         </h2>
