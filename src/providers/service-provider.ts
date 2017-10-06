@@ -37,7 +37,7 @@ export class ServiceProvider {
     return this.http.get(this.api + '').map(res => res.json());
   }
 
-  getDeputados(pagina = 1) {
+  getDeputados(pagina) {
     return this.http.get(this.api + 'deputados?ordem=ASC&ordenarPor=nome&itens=100&pagina='+ pagina).map(res => res.json());
   }
 

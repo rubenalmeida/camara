@@ -21,28 +21,26 @@
     <ion-searchbar placeholder="Pesquisar Deputados" [(ngModel)]="searchQuery" [showCancelButton]="shouldShowCancel"
                    (ionInput)="getItems($event)"></ion-searchbar>
 
-    <ion-item-divider *ng="deputados.length == 0">
-      <ion-spinner name="crescent"></ion-spinner>
-    </ion-item-divider>
-
-    <div *ngIf="i < 15">
-      <ion-item color="none" on-click="goToPerfilDeputado(deputado.id)"
-                *ngFor="let deputado of deputados; let i = index">
-        <ion-avatar item-left>
-          <img src="{{deputado.urlFoto}}"/>
-        </ion-avatar>
-        <h2>
-          {{deputado.nome}}
-        </h2>
-      </ion-item>
+    <div *ngIf="deputados.length == 0">
+      <ion-col col-6>
+        <ion-spinner name="crescent"></ion-spinner>
+      </ion-col>
     </div>
 
-    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-      <ion-infinite-scroll-content
-        loadingSpinner="android"
-        loadingText="Carregando mais deputados">
-      </ion-infinite-scroll-content>
-    </ion-infinite-scroll>
-
+    <ion-item color="none" (click)="goToPerfilDeputado(deputado.id)"
+              *ngFor="let deputado of deputados | slice:0:limit; let i = index">
+      <ion-avatar item-left>
+        <img src="{{deputado.urlFoto}}"/>
+      </ion-avatar>
+      <h2>
+        {{deputado.nome}}
+      </h2>
+    </ion-item>
   </ion-list>
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Carregando mais deputados">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, LoadingController } from 'ionic-angular';
 import {PerfilDeputadoPage} from '../perfil-deputado/perfil-deputado';
 // import { PerfilPartidoPage } from '../perfil-partido/perfil-partido';
 import {ServiceProvider} from "../../providers/service-provider";
@@ -15,20 +15,20 @@ export class DeputadosPage {
   deputados = [];
   tmpDeputados = [];
   pagina = 1;
-  constructor(public navCtrl: NavController, public service: ServiceProvider) {
+  limit = 15;
+
+  constructor(public navCtrl: NavController, public service: ServiceProvider, public loadingCtrl: LoadingController) {
     let array = [];
     for(let i = 1; i < 7;  i++){
       this.service.getDeputados(i).subscribe(data => {
         array.push.apply(array, data.dados);
       });
-      console.log(array);
     }
-    this.deputados = array;
+    this.tmpDeputados = array;
   }
 
-
   ionViewDidLoad() {
-    //this.deputados = this.tmpDeputados;
+    this.deputados = this.tmpDeputados;
     //console.log(this.deputados);
   }
 
@@ -38,21 +38,15 @@ export class DeputadosPage {
     this.navCtrl.push(PerfilDeputadoPage, params);
   }
 
-  doInfinite(infiniteScroll) {
-    let length = this.deputados.length;
-    let newCount = length + 10;
-    if(length >= 50){
-      this.pagina++;
-      newCount = 10
-    }
-    let filtros = '&itens=' + newCount + '&pagina=' + this.pagina;
+  doInfinite(): Promise<any> {
 
-    setTimeout(() => {
-      //this.getDeputados(filtros);
-      infiniteScroll.complete();
-    }, 1000);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+       this.limit += 15;
+        resolve();
+      }, 800);
+    })
   }
-
 
   getItems(ev: any) {
     // Reset items back to all of the items
