@@ -122,15 +122,9 @@
     </div>
 
 
-    <ion-list *ngSwitchCase="'despesas'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="img/thumbnail-kitten-1.jpg">
-        </ion-thumbnail>
-        <h2>Luna</h2>
-      </ion-item>
-      <despesas-deputado></despesas-deputado>
-    </ion-list>
+    <div *ngSwitchCase="'despesas'">
+      <despesas-deputado [despesa]="teste"></despesas-deputado>
+    </div>
 
     <ion-list *ngSwitchCase="'proposicoes'">
       <ion-item>

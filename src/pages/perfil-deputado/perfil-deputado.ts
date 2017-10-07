@@ -14,7 +14,7 @@ export class PerfilDeputadoPage {
   deputado = [];
   detalhe = [];
   tab: string = 'perfil';
-
+  teste: any = 'Hello World!';
   constructor(public navCtrl: NavController, public params: NavParams, public service: ServiceProvider, public loadingCtrl: LoadingController) {
     this.presentLoading()
   }
