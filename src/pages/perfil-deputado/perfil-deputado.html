@@ -20,7 +20,7 @@
              id="page16">
 
   <div padding>
-    <ion-segment [(ngModel)]="deputado">
+    <ion-segment [(ngModel)]="tab">
       <ion-segment-button value="perfil">
         Perfil
       </ion-segment-button>
@@ -34,91 +34,112 @@
   </div>
 
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <div>
-          <img src="{{detalhe.urlFoto}}"
-               style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>
+  <div [ngSwitch]="tab">
+    <div *ngSwitchCase="'perfil'">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <img src="{{detalhe.urlFoto}}"
+                   style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>
+            </div>
+          </ion-col>
+
+          <ion-col>
+            <ion-list>
+              <ion-item style="text-align:center; background: #fff; padding: 2px;">
+                <div id="perfilDeputado-markdown9" style="text-align:center;"
+                     class="show-list-numbers-and-dots">
+                  <p style="margin-top:0px;color:#000000;">
+                    {{detalhe.nome}}
+                  </p>
+                </div>
+              </ion-item>
+
+              <ion-item style="text-align:center; background: #fff; padding: 2px;">
+                <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+                  <p style="margin-top:0px;color:#000000;">
+
+                    <img src="http://www.camara.leg.br/internet/Deputado/img/partidos/{{detalhe.siglaPartido}}.gif"/>
+                  </p>
+                </div>
+              </ion-item>
+
+              <ion-item style="text-align:center; background: #fff; padding: 2px;">
+                <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+                  <p style="margin-top:0px;color:#000000;">
+                    {{detalhe.siglaUf}}
+                  </p>
+                </div>
+              </ion-item>
+
+              <ion-item style="text-align:center; background: #fff; padding: 2px;">
+                <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+                  <p style="margin-top:0px;color:#000000;">
+                    {{detalhe.situacao}}
+                  </p>
+                </div>
+              </ion-item>
+
+            </ion-list>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item style="text-align:center; background: #fff; padding: 2px;">
+              <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+                <p style="margin-top:0px;color:#000000;">
+                  {{deputado.nomeCivil}}
+                </p>
+              </div>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item style="text-align:center; background: #fff; padding: 2px;">
+              <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+                <p style="margin-top:0px;color:#000000;">
+                  Condição Eleitoral: {{detalhe.condicaoEleitoral}}
+                </p>
+              </div>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+      <ion-item style="text-align:center; background: #fff; padding: 2px;">
+        <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            Escolaridade: {{deputado.escolaridade}}
+          </p>
         </div>
-      </ion-col>
+      </ion-item>
 
-      <ion-col>
-        <ion-list>
-          <ion-item style="text-align:center; background: #fff; padding: 2px;">
-            <div id="perfilDeputado-markdown9" style="text-align:center;"
-                 class="show-list-numbers-and-dots">
-              <p style="margin-top:0px;color:#000000;">
-                {{detalhe.nome}}
-              </p>
-            </div>
-          </ion-item>
-
-          <ion-item style="text-align:center; background: #fff; padding: 2px;">
-            <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
-              <p style="margin-top:0px;color:#000000;">
-
-                <img src="http://www.camara.leg.br/internet/Deputado/img/partidos/{{detalhe.siglaPartido}}.gif" />
-              </p>
-            </div>
-          </ion-item>
-
-          <ion-item style="text-align:center; background: #fff; padding: 2px;">
-            <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
-              <p style="margin-top:0px;color:#000000;">
-                {{detalhe.siglaUf}}
-              </p>
-            </div>
-          </ion-item>
-
-          <ion-item style="text-align:center; background: #fff; padding: 2px;">
-            <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
-              <p style="margin-top:0px;color:#000000;">
-                {{detalhe.situacao}}
-              </p>
-            </div>
-          </ion-item>
-
-        </ion-list>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-  <ion-row>
- <ion-col>
-    <ion-item style="text-align:center; background: #fff; padding: 2px;">
-      <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          {{deputado.nomeCivil}}
-        </p>
-      </div>
-    </ion-item>
- </ion-col>
-  <ion-col>
-  <ion-item style="text-align:center; background: #fff; padding: 2px;">
-    <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
-      <p style="margin-top:0px;color:#000000;">
-       Condição Eleitoral: {{detalhe.condicaoEleitoral}}
-      </p>
+      <button ion-button block>Despesas</button>
     </div>
-  </ion-item>
-  </ion-col>
-  </ion-row>
-  </ion-grid>
 
 
-  <ion-item style="text-align:center; background: #fff; padding: 2px;">
-    <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
-      <p style="margin-top:0px;color:#000000;">
-        Escolaridade: {{deputado.escolaridade}}
-      </p>
-    </div>
-  </ion-item>
+    <ion-list *ngSwitchCase="'despesas'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+      <despesas-deputado></despesas-deputado>
+    </ion-list>
 
-
-
-
-  <button ion-button block>Despesas</button>
-
+    <ion-list *ngSwitchCase="'proposicoes'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+      <proposicoes-deputado></proposicoes-deputado>
+    </ion-list>
+  </div>
 </ion-content>

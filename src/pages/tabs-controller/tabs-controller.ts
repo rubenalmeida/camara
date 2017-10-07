@@ -10,8 +10,8 @@ import { DespesasPage } from '../despesas/despesas';
 import { OrgaosPage } from '../orgaos/orgaos';
 import { EventosPage } from '../eventos/eventos';
 import { VotacoesPage } from '../votacoes/votacoes';
-import { NotCiasPage } from '../not-cias/not-cias';
-import { TVCMaraPage } from '../t-vcmara/t-vcmara';
+import { NotCiasPage } from '../noticias/not-cias';
+import { TVCMaraPage } from '../tvcamara/t-vcmara';
 
 @Component({
   selector: 'page-tabs-controller',

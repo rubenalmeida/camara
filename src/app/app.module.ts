@@ -9,8 +9,8 @@ import { PartidosPage } from '../pages/partidos/partidos';
 import { PerfilPartidoPage } from '../pages/perfil-partido/perfil-partido';
 import { PerfilDeputadoPage } from '../pages/perfil-deputado/perfil-deputado';
 import { DeputadosPage } from '../pages/deputados/deputados';
-import { TVCMaraPage } from '../pages/t-vcmara/t-vcmara';
-import { NotCiasPage } from '../pages/not-cias/not-cias';
+import { TVCMaraPage } from '../pages/tvcamara/t-vcmara';
+import { NotCiasPage } from '../pages/noticias/not-cias';
 import { OrgaosPage } from '../pages/orgaos/orgaos';
 import { EventosPage } from '../pages/eventos/eventos';
 import { ProposicoesPage } from '../pages/proposicoes/proposicoes';
@@ -19,6 +19,8 @@ import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { LoginPage } from '../pages/login/login';
 import { DespesasPage } from '../pages/despesas/despesas';
 import { BemVindoPage } from '../pages/bem-vindo/bem-vindo';
+import {DespesasDeputadoComponent} from "../components/despesas-deputado/despesas-deputado";
+import {ProposicoesDeputadoComponent} from "../components/proposicoes-deputado/proposicoes-deputado";
 import {ServiceProvider} from '../providers/service-provider';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -41,7 +43,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsControllerPage,
     LoginPage,
     DespesasPage,
-    BemVindoPage
+    BemVindoPage,
+    DespesasDeputadoComponent,
+    ProposicoesDeputadoComponent
   ],
   imports: [
     BrowserModule,

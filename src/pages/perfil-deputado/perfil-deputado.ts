@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { ServiceProvider } from "../../providers/service-provider";
+import {Component} from '@angular/core';
+import {NavController, NavParams, LoadingController} from 'ionic-angular';
+import {ServiceProvider} from "../../providers/service-provider";
 import {Observable} from "rxjs";
 
+import {DespesasPage} from "../despesas/despesas";
+import {ProposicoesPage} from "../proposicoes/proposicoes";
 @Component({
   selector: 'page-perfil-deputado',
   templateUrl: 'perfil-deputado.html'
@@ -10,19 +12,29 @@ import {Observable} from "rxjs";
 export class PerfilDeputadoPage {
 
   deputado = [];
-  detalhe  = [];
+  detalhe = [];
+  tab: string = 'perfil';
 
-  constructor(public navCtrl: NavController, public params: NavParams, public service: ServiceProvider) {
+  constructor(public navCtrl: NavController, public params: NavParams, public service: ServiceProvider, public loadingCtrl: LoadingController) {
+    this.presentLoading()
   }
 
-  ionViewDidLoad(){
+  ionViewDidLoad() {
     let id = this.params.data;
     this.service.getPerfilDeputado(id).subscribe(data => {
       console.log(data.dados);
       console.log(data.dados.ultimoStatus);
-      this.deputado = data.dados ;
+      this.deputado = data.dados;
       this.detalhe = data.dados.ultimoStatus;
     });
+  }
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
   }
 
 }

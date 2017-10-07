@@ -38,6 +38,7 @@ export class ServiceProvider {
   }
 
   getDeputados(pagina) {
+    console.log(pagina)
     return this.http.get(this.api + 'deputados?ordem=ASC&ordenarPor=nome&itens=100&pagina='+ pagina).map(res => res.json());
   }
 
