@@ -46,7 +46,5 @@ config.xml
 ionic.config.json
 package.json
 resources/
-src/
 tsconfig.json
 tslint.json
-!/src/providers/service-provider.ts
