@@ -1,26 +1,20 @@
-<ion-card fullscreen>
-    <ion-card-header>
-      Bar Chart
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #barCanvas></canvas>
-    </ion-card-content>
-  </ion-card>
+<ion-card>
+  <ion-card-content>
+    <canvas #barCanvas width="400" height="400"></canvas>
+  </ion-card-content>
+</ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      Doughnut Chart
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #doughnutCanvas></canvas>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      Line Chart
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #lineCanvas></canvas>
-    </ion-card-content>
-  </ion-card>
+<ion-card *ngFor="let despesa of despesas">
+  <ion-card-header>
+   <p>COMBUSTIVEL</p>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+       <p>Ano: 2017: Mês: 10</p>
+        <p>Valor: R$ 150,00</p>
+        <p>Fornecedor: Posto Ipiranga</p>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
