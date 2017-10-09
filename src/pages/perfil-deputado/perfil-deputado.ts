@@ -5,6 +5,8 @@ import {Observable} from "rxjs";
 
 import {DespesasPage} from "../despesas/despesas";
 import {ProposicoesPage} from "../proposicoes/proposicoes";
+import { Chart } from 'chart.js';
+
 @Component({
   selector: 'page-perfil-deputado',
   templateUrl: 'perfil-deputado.html'
@@ -26,6 +28,9 @@ export class PerfilDeputadoPage {
       this.detalhe = data.dados.ultimoStatus;
       this.idDeputado = data.dados.id;
     });
+
+
+
   }
 
   presentLoading() {
