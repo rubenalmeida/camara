@@ -19,13 +19,11 @@ export class PartidosPage {
 
   ionViewDidLoad(){
     this.service.getPartidos().subscribe(data =>{
-      console.log(data.dados);
       this.partidos = data.dados;
     });
   }
 
   goToPerfilPartido(params){
-    console.log(params);
     if (!params) params = {};
     this.navCtrl.push(PerfilPartidoPage, params);
   }

@@ -13,34 +13,48 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding style="background:url(assets/img/oPwHHWvHRkC7vrdrBpUV_wp-image-142634210.jpg) no-repeat center;background-size:cover;" id="page15">
+<ion-content padding
+             style="background:url(assets/img/oPwHHWvHRkC7vrdrBpUV_wp-image-142634210.jpg) no-repeat center;background-size:cover;"
+             id="page15">
 
-  <ion-list *ngFor="let detalhe of partido">
+  <ion-list>
     <ion-item>
       <div id="perfilPartido-markdown4" style="text-align:center;" class="show-list-numbers-and-dots">
         <p style="margin-top:0px;color:#000000;">
           <strong>
-           {{detalhe.nome}}
+            {{partido.nome}}
           </strong>
         </p>
       </div>
     </ion-item>
   </ion-list>
   <div>
-    <img src="{{urlFoto}}" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+    <img src="{{partido.urlLogo}}" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"/>
   </div>
-  <ion-card id="perfilPartido-card23">
+  <ion-card>
+    <ion-card-header>Deputados</ion-card-header>
+    <ion-item-divider></ion-item-divider>
     <ion-list>
-      <ion-item id="perfilPartido-list-item-container7">
-        <div id="perfilPartido-markdown7" style="text-align:center;" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#fff;">
-            {{detalhe.nome}}
-          </p>
+      <ion-list-header>
+        <h2>Líder</h2>
 
-          <p style="margin-top:0px;color:#000000;">
-            {{detalhe.sigla}}
-          </p>
-        </div>
+      </ion-list-header>
+    </ion-list>
+    <ion-list>
+      <ion-item color="none" text-wrap>
+        <ion-avatar item-left>
+          <img src="{{lider.urlFoto}}"/>
+        </ion-avatar>
+        <h2>{{lider.nome}}</h2>
+      </ion-item>
+    </ion-list>
+    <ion-item-divider></ion-item-divider>
+    <ion-list *ngFor="let deputado of deputados" (click)="goToPerfilDeputado(deputado.id)">
+      <ion-item color="none" text-wrap>
+        <ion-avatar item-left>
+          <img src="{{deputado.urlFoto}}"/>
+        </ion-avatar>
+        <h2>{{deputado.nome}}</h2>
       </ion-item>
     </ion-list>
   </ion-card>

@@ -21,11 +21,17 @@ export class ServiceProvider {
     return this.http.get(this.api + 'blocos' + filtros).map(res => res.json());
   }
 
-  getPartidos(filtros = '') {
-    return this.http.get(this.api + 'partidos?itens=100&ordem=ASC&ordenarPor=sigla').map(res => res.json());
+  getPartidos() {
+    return this.http.get(this.api + 'partidos?itens=30&ordem=ASC&ordenarPor=sigla').map(res => res.json());
+  }
+  getDetalhesPartidos(idPartido) {
+    return this.http.get(this.api + 'partidos/' + idPartido).map(res => res.json());
   }
 
-  getPerfilPartido(idPartido) {
+  getPerfilPartido(idPartido, urlDeputados) {
+    if(urlDeputados){
+      return this.http.get(urlDeputados).map(res => res.json());
+    }
     return this.http.get(this.api + 'partidos/' + idPartido).map(res => res.json());
   }
 
@@ -39,11 +45,19 @@ export class ServiceProvider {
 
   getDeputados(pagina) {
     console.log(pagina)
+    if(!pagina){
+      pagina = 1;
+    }
     return this.http.get(this.api + 'deputados?ordem=ASC&ordenarPor=nome&itens=100&pagina='+ pagina).map(res => res.json());
   }
 
   getPerfilDeputado(idDeputado) {
     return this.http.get(this.api + 'deputados/' + idDeputado).map(res => res.json());
+  }
+
+  getDespesas(idDeputado, ano = '', mes = '') {
+    console.log(idDeputado);
+    return this.http.get(this.api + 'deputados/' + idDeputado + '/despesas?ano=' + ano + '&mes=' + mes).map(res => res.json());
   }
 
   getFrentes(filtros = '') {
@@ -69,4 +83,5 @@ export class ServiceProvider {
   getVotacoes(filtros = '') {
     return this.http.get(this.api + '').map(res => res.json());
   }
+
 }

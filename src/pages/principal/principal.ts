@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { DeputadosPage } from '../deputados/deputados';
-import { PerfilDeputadoPage } from '../perfil-deputado/perfil-deputado';
-import { PartidosPage } from '../partidos/partidos';
-import { PerfilPartidoPage } from '../perfil-partido/perfil-partido';
-import { DespesasPage } from '../despesas/despesas';
-import { OrgaosPage } from '../orgaos/orgaos';
-import { EventosPage } from '../eventos/eventos';
-import { ProposicoesPage } from '../proposicoes/proposicoes';
-import { VotacoesPage } from '../votacoes/votacoes';
+import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import {DeputadosPage} from '../deputados/deputados';
+import {PerfilDeputadoPage} from '../perfil-deputado/perfil-deputado';
+import {PartidosPage} from '../partidos/partidos';
+import {PerfilPartidoPage} from '../perfil-partido/perfil-partido';
+import {DespesasPage} from '../despesas/despesas';
+import {OrgaosPage} from '../orgaos/orgaos';
+import {EventosPage} from '../eventos/eventos';
+import {ProposicoesPage} from '../proposicoes/proposicoes';
+import {VotacoesPage} from '../votacoes/votacoes';
+import {ServiceProvider} from "../../providers/service-provider";
 
 @Component({
   selector: 'page-principal',
@@ -16,33 +17,50 @@ import { VotacoesPage } from '../votacoes/votacoes';
 })
 export class PrincipalPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public service: ServiceProvider) {
   }
-  goToDeputados(params){
+  
+  goToDeputados(params) {
     if (!params) params = {};
     this.navCtrl.push(DeputadosPage);
-  }goToPerfilDeputado(params){
+  }
+
+  goToPerfilDeputado(params) {
     if (!params) params = {};
     this.navCtrl.push(PerfilDeputadoPage);
-  }goToPartidos(params){
+  }
+
+  goToPartidos(params) {
     if (!params) params = {};
     this.navCtrl.push(PartidosPage);
-  }goToPerfilPartido(params){
+  }
+
+  goToPerfilPartido(params) {
     if (!params) params = {};
     this.navCtrl.push(PerfilPartidoPage);
-  }goToDespesas(params){
+  }
+
+  goToDespesas(params) {
     if (!params) params = {};
     this.navCtrl.push(DespesasPage);
-  }goToOrgaos(params){
+  }
+
+  goToOrgaos(params) {
     if (!params) params = {};
     this.navCtrl.push(OrgaosPage);
-  }goToEventos(params){
+  }
+
+  goToEventos(params) {
     if (!params) params = {};
     this.navCtrl.push(EventosPage);
-  }goToProposicoes(params){
+  }
+
+  goToProposicoes(params) {
     if (!params) params = {};
     this.navCtrl.push(ProposicoesPage);
-  }goToVotacoes(params){
+  }
+
+  goToVotacoes(params) {
     if (!params) params = {};
     this.navCtrl.push(VotacoesPage);
   }
