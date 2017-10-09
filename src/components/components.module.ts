@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { DespesasDeputadoComponent } from './despesas-deputado/despesas-deputado';
 import { ProposicoesDeputadoComponent } from './proposicoes-deputado/proposicoes-deputado';
-import { ExpandableComponent } from './expandable/expandable';
+import { AccordionComponent } from './accordion/accordion';
+
 @NgModule({
-	declarations: [DespesasDeputadoComponent,
+	declarations: [
+	  DespesasDeputadoComponent,
     ProposicoesDeputadoComponent,
-    ExpandableComponent],
+    AccordionComponent,
+    ],
+
 	imports: [],
-	exports: [DespesasDeputadoComponent,
+	exports: [
+	  DespesasDeputadoComponent,
     ProposicoesDeputadoComponent,
-    ExpandableComponent]
+    AccordionComponent,
+    ]
 })
 export class ComponentsModule {}
