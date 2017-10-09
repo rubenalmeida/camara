@@ -14,7 +14,7 @@ export class PerfilDeputadoPage {
   deputado = [];
   detalhe = [];
   tab: string = 'perfil';
-  teste: any = 'Hello World!';
+  idDeputado = 0;
   constructor(public navCtrl: NavController, public params: NavParams, public service: ServiceProvider, public loadingCtrl: LoadingController) {
     this.presentLoading()
   }
@@ -22,17 +22,16 @@ export class PerfilDeputadoPage {
   ionViewDidLoad() {
     let id = this.params.data;
     this.service.getPerfilDeputado(id).subscribe(data => {
-      console.log(data.dados);
-      console.log(data.dados.ultimoStatus);
       this.deputado = data.dados;
       this.detalhe = data.dados.ultimoStatus;
+      this.idDeputado = data.dados.id;
     });
   }
 
   presentLoading() {
     let loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 3000
+      content: "Carregando deputado...",
+      duration: 1000
     });
     loader.present();
   }

@@ -1,5 +1,6 @@
-import {Component, ViewChild, Input, Output, EventEmitter} from '@angular/core';
-import { Chart } from 'chart.js';
+import {Component, ViewChild, Input} from '@angular/core';
+import {Chart} from 'chart.js';
+import {ServiceProvider} from "../../providers/service-provider";
 
 @Component({
   selector: 'despesas-deputado',
@@ -8,55 +9,107 @@ import { Chart } from 'chart.js';
 export class DespesasDeputadoComponent {
 
   @ViewChild('barCanvas') barCanvas;
+  @Input('deputado') idDeputado;
 
   barChart: any;
-  @Input('despesa') varText;
-  text: string;
+  public ano: any = new Date().getFullYear();
+  public mes: any = new Date().getUTCMonth();
+  despesas = [];
+  dataChart = [];
 
-  constructor() {
-    this.text = 'Despesas do deputado blablablabla';
+  constructor(public service: ServiceProvider) {
   }
+
   ngOnInit() {
-    console.log(this.varText);
-    this.text = this.varText;
+    //this.barChart = new Chart(this.barCanvas.nativeElement, {
+//
+    //  type: 'doughnut',
+    //  data: {
+    //    labels: ['Valor'],
+    //    datasets: [{
+    //      label: 'R$ em despesas',
+    //      data: [100],
+    //      backgroundColor: [
+    //        'rgba(255, 99, 132, 0.2)',
+    //        'rgba(54, 162, 235, 0.2)',
+    //        'rgba(255, 206, 86, 0.2)',
+    //        'rgba(75, 192, 192, 0.2)',
+    //        'rgba(153, 102, 255, 0.2)',
+    //        'rgba(255, 159, 64, 0.2)'
+    //      ],
+    //      borderColor: [
+    //        'rgba(255,99,132,1)',
+    //        'rgba(54, 162, 235, 1)',
+    //        'rgba(255, 206, 86, 1)',
+    //        'rgba(75, 192, 192, 1)',
+    //        'rgba(153, 102, 255, 1)',
+    //        'rgba(255, 159, 64, 1)'
+    //      ],
+    //      borderWidth: 1
+    //    }]
+    //  },
+    //  options: {
+    //    scales: {
+    //      yAxes: [{
+    //        ticks: {
+    //          beginAtZero: true
+    //        }
+    //      }]
+    //    }
+    //  }
+//
+    //});
 
-    this.barChart = new Chart(this.barCanvas.nativeElement, {
+    this.service.getDespesas(this.idDeputado, this.ano).subscribe(data => {
+      this.despesas = data.dados;
+      //this.dataChart = this.setData(data.dados);
+      console.log(this.despesas);
+    });
 
-      type: 'bar',
-      data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero:true
-            }
-          }]
+  }
+
+
+  setData(despesas) {
+    let obChart = [];
+    let prevValue;
+    despesas.forEach(function (item, index) {
+
+      let valor = item.valorLiquido;
+      let desc = item.tipoDespesa;
+      let temp = [];
+      if (index > 0) {
+        let prevIndex = index - 1;
+        prevValue = obChart[prevIndex][desc];
+
+        if (obChart[prevIndex][desc]) {
+          console.log(obChart[prevIndex].indexOf(valor));
         }
       }
+      temp[desc] = valor;
+      obChart.push(temp);
 
     });
+
+    return obChart;
+
+    //let ob = {
+    //  "ano": "2017",
+    //  "mes": "8",
+    //  "tipoDespesa": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    //  "idDocumento": "6357571",
+    //  "tipoDocumento": "Nota Fiscal",
+    //  "idTipoDocumento": "0",
+    //  "dataDocumento": "2017-08-07",
+    //  "numDocumento": "2161",
+    //  "valorDocumento": "20",
+    //  "urlDocumento": "",
+    //  "nomeFornecedor": "CHAVEIRO ASAS",
+    //  "cnpjCpfFornecedor": "12556406000134",
+    //  "valorLiquido": "20",
+    //  "valorGlosa": "0",
+    //  "numRessarcimento": "5927",
+    //  "idLote": "1411812",
+    //  "parcela": "0"
+    //};
   }
 }
