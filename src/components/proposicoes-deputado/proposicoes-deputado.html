@@ -1,4 +1,11 @@
-<!-- Generated template for the ProposicoesDeputadoComponent component -->
-<div>
-  {{text}}
+<div *ngIf="proposicoes.length == 0">
+  <ion-col col-6 style="align-content: center">
+    <ion-spinner name="crescent"></ion-spinner>
+  </ion-col>
 </div>
+<ion-card *ngFor="let proposicao of proposicoes">
+  <ion-card-header>{{proposicao.siglaTipo}}</ion-card-header>
+  <ion-card-content>
+    {{proposicao.ementa}}
+  </ion-card-content>
+</ion-card>

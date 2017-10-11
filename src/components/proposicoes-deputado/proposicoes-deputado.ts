@@ -1,22 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {ServiceProvider} from "../../providers/service-provider";
 
-/**
- * Generated class for the ProposicoesDeputadoComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'proposicoes-deputado',
   templateUrl: 'proposicoes-deputado.html'
 })
 export class ProposicoesDeputadoComponent {
 
-  text: string;
+  @Input('deputado') idDeputado;
 
-  constructor() {
-    console.log('Hello ProposicoesDeputadoComponent Component');
-    this.text = 'proposicoes do deputado aqui. bla bla bla bla';
+  proposicoes = [];
+  public ano: any = new Date().getFullYear();
+
+  constructor(public service: ServiceProvider) {
+    console.log(this.idDeputado, 'proposicoeees')
+    this.service.getProposicoes(this.ano).subscribe(data => {
+      this.proposicoes = data.dados;
+    });
   }
 
 }

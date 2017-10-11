@@ -2,9 +2,6 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, LoadingController} from 'ionic-angular';
 import {ServiceProvider} from "../../providers/service-provider";
 import {Observable} from "rxjs";
-
-import {DespesasPage} from "../despesas/despesas";
-import {ProposicoesPage} from "../proposicoes/proposicoes";
 import { Chart } from 'chart.js';
 
 @Component({
@@ -18,6 +15,8 @@ export class PerfilDeputadoPage {
   tab: string = 'perfil';
   idDeputado = 0;
   constructor(public navCtrl: NavController, public params: NavParams, public service: ServiceProvider, public loadingCtrl: LoadingController) {
+    this.idDeputado = this.params.data;
+    console.log(this.params.data, 'iddddddd');
     this.presentLoading()
   }
 

@@ -20,7 +20,7 @@ export class PerfilPartidoPage {
   }
 
   getDeputados() {
-    this.service.getPerfilPartido(null, this.partido['status'].uriMembros).subscribe(data => {
+    this.service.goUri(this.partido['status'].uriMembros).subscribe(data => {
       this.deputados = data.dados;
       console.log(this.deputados);
     });

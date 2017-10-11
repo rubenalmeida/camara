@@ -3,12 +3,16 @@ import { DespesasDeputadoComponent } from './despesas-deputado/despesas-deputado
 import { ProposicoesDeputadoComponent } from './proposicoes-deputado/proposicoes-deputado';
 import { ExpandableComponent } from './expandable/expandable';
 @NgModule({
-	declarations: [DespesasDeputadoComponent,
+	declarations: [
+    DespesasDeputadoComponent,
     ProposicoesDeputadoComponent,
-    ExpandableComponent],
+    ExpandableComponent
+  ],
 	imports: [],
-	exports: [DespesasDeputadoComponent,
+	exports: [
+	  DespesasDeputadoComponent,
     ProposicoesDeputadoComponent,
-    ExpandableComponent]
+    ExpandableComponent
+  ]
 })
 export class ComponentsModule {}

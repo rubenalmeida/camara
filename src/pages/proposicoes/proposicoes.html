@@ -8,8 +8,20 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding style="background:url(assets/img/8CyX9olQQP6DuU6osXXU_wp-image-142634210.jpg) no-repeat center;background-size:cover;" id="page10">
-  <form id="proposicoes-form6">
+<ion-content padding
+             style="background:url(assets/img/8CyX9olQQP6DuU6osXXU_wp-image-142634210.jpg) no-repeat center;background-size:cover;">
+  <form>
     <ion-searchbar placeholder="Pesquisar Proposições" name="" id="proposicoes-search8"></ion-searchbar>
   </form>
+  <div *ngIf="proposicoes.length == 0">
+    <ion-col col-6 style="align-content: center">
+      <ion-spinner name="crescent"></ion-spinner>
+    </ion-col>
+  </div>
+  <ion-card *ngFor="let proposicao of proposicoes">
+    <ion-card-header>{{proposicao.siglaTipo}}</ion-card-header>
+    <ion-card-content>
+      {{proposicao.ementa}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

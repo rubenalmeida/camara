@@ -1,4 +1,4 @@
-import {Component, ViewChild, Input} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Chart} from 'chart.js';
 import {ServiceProvider} from "../../providers/service-provider";
 
