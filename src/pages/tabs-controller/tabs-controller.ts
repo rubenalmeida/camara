@@ -10,7 +10,7 @@ import { DespesasPage } from '../despesas/despesas';
 import { OrgaosPage } from '../orgaos/orgaos';
 import { EventosPage } from '../eventos/eventos';
 import { VotacoesPage } from '../votacoes/votacoes';
-import { NotCiasPage } from '../noticias/not-cias';
+import { NotCiasPage } from '../noticias/noticias';
 import { TVCMaraPage } from '../tvcamara/t-vcmara';
 
 @Component({

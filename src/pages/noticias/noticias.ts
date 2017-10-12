@@ -3,11 +3,11 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-not-cias',
-  templateUrl: 'not-cias.html'
+  templateUrl: 'noticias.html'
 })
 export class NotCiasPage {
 
   constructor(public navCtrl: NavController) {
   }
-  
+
 }

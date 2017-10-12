@@ -10,7 +10,7 @@ import { PerfilPartidoPage } from '../pages/perfil-partido/perfil-partido';
 import { PerfilDeputadoPage } from '../pages/perfil-deputado/perfil-deputado';
 import { DeputadosPage } from '../pages/deputados/deputados';
 import { TVCMaraPage } from '../pages/tvcamara/t-vcmara';
-import { NotCiasPage } from '../pages/noticias/not-cias';
+import { NotCiasPage } from '../pages/noticias/noticias';
 import { OrgaosPage } from '../pages/orgaos/orgaos';
 import { EventosPage } from '../pages/eventos/eventos';
 import { ProposicoesPage } from '../pages/proposicoes/proposicoes';
