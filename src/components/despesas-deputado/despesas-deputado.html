@@ -1,19 +1,18 @@
-<ion-card>
-  <ion-card-content>
-    <canvas #barCanvas width="400" height="400"></canvas>
-  </ion-card-content>
-</ion-card>
-
+<div *ngIf="despesas.length == 0">
+  <ion-col col-6 style="align-content: center">
+    <ion-spinner name="crescent"></ion-spinner>
+  </ion-col>
+</div>
 <ion-card *ngFor="let despesa of despesas">
   <ion-card-header>
-   <p>COMBUSTIVEL</p>
+   <p text-wrap>{{despesa.tipoDespesa}}</p>
   </ion-card-header>
   <ion-card-content>
     <ion-list>
       <ion-item>
-       <p>Ano: 2017: Mês: 10</p>
-        <p>Valor: R$ 150,00</p>
-        <p>Fornecedor: Posto Ipiranga</p>
+       <p>Ano: 2017: Mês: {{meses[despesa.mes]}}</p>
+        <p>Valor: R$ {{despesa.valorLiquido}}</p>
+        <p text-wrap>Fornecedor: {{despesa.nomeFornecedor}}</p>
       </ion-item>
     </ion-list>
   </ion-card-content>

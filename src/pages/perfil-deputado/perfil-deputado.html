@@ -120,12 +120,13 @@
     </div>
 
 
+    {{idDeputado}}
     <div *ngSwitchCase="'despesas'">
-      <despesas-deputado></despesas-deputado>
+      <despesas-deputado [deputado]="idDeputado"></despesas-deputado>
     </div>
 
-    <ion-list *ngSwitchCase="'proposicoes'">
-      <proposicoes-deputado [deputado]="idDeputado"></proposicoes-deputado>
-    </ion-list>
+    <div *ngSwitchCase="'proposicoes'">
+      <proposicoes-deputado [deputado]="id"></proposicoes-deputado>
+    </div>
   </div>
 </ion-content>

@@ -13,10 +13,12 @@ export class PerfilDeputadoPage {
   deputado = [];
   detalhe = [];
   tab: string = 'perfil';
-  idDeputado = 0;
+  idDeputado :number;
+  id: number = 0;
   constructor(public navCtrl: NavController, public params: NavParams, public service: ServiceProvider, public loadingCtrl: LoadingController) {
     this.idDeputado = this.params.data;
-    console.log(this.params.data, 'iddddddd');
+    this.id = this.params.data;
+    console.log(this.idDeputado, 'iddddddd');
     this.presentLoading()
   }
 
@@ -25,7 +27,6 @@ export class PerfilDeputadoPage {
     this.service.getPerfilDeputado(id).subscribe(data => {
       this.deputado = data.dados;
       this.detalhe = data.dados.ultimoStatus;
-      this.idDeputado = data.dados.id;
     });
 
 
