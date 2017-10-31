@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>{{proposicao.descricaoTipo}}</ion-card-header>
+    <ion-card-content>
+      {{proposicao.ementa}}
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <div>{{proposicao.tipoAutor}}</div>
+      </ion-col>
+      <ion-col>
+        <div>{{status['descricaoSituacao']}}</div>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          {{proposicao.ano}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
+

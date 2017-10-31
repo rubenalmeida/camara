@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {ServiceProvider} from "../../providers/service-provider";
+import { ModalController } from 'ionic-angular';
+import { ProposicaoDetalhePage } from '../proposicao-detalhe/proposicao-detalhe';
 
 @Component({
   selector: 'page-proposicoes',
@@ -12,22 +14,18 @@ export class ProposicoesPage {
   proposicoes = [];
   tipos = [];
 
-  constructor(public navCtrl: NavController, public service: ServiceProvider) {
+  constructor(public navCtrl: NavController, public service: ServiceProvider, public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     this.service.getProposicoes(this.ano).subscribe(data => {
       this.proposicoes = data.dados;
-      this.getTipos();
       console.log(this.proposicoes)
     });
   }
 
-  getTipos() {
-    this.service.getReferencias('tiposProposicao').subscribe(data => {
-      this.tipos = data.dados;
-      console.log(this.tipos[0].nome)
-
-    })
+  presentProfileModal(id) {
+    const profileModal = this.modalCtrl.create(ProposicaoDetalhePage, { propId: id });
+    profileModal.present();
   }
 }

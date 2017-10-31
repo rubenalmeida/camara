@@ -18,7 +18,7 @@
       <ion-spinner name="crescent"></ion-spinner>
     </ion-col>
   </div>
-  <ion-card *ngFor="let proposicao of proposicoes">
+  <ion-card *ngFor="let proposicao of proposicoes" (click)="presentProfileModal(proposicao.id)">
     <ion-card-header>{{proposicao.siglaTipo}}</ion-card-header>
     <ion-card-content>
       {{proposicao.ementa}}

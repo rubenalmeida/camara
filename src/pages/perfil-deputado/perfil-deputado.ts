@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, LoadingController} from 'ionic-angular';
 import {ServiceProvider} from "../../providers/service-provider";
 import {Observable} from "rxjs";
-import { Chart } from 'chart.js';
+import {Chart} from 'chart.js';
 
 @Component({
   selector: 'page-perfil-deputado',
@@ -13,11 +13,14 @@ export class PerfilDeputadoPage {
   deputado = [];
   detalhe = [];
   tab: string = 'perfil';
-  idDeputado :number;
-  id: number = 0;
+  idDeputado: number;
+  proposicoes = [];
+  tiposProposicao = [];
+  limit = 10;
+  public ano: any = new Date().getFullYear();
+
   constructor(public navCtrl: NavController, public params: NavParams, public service: ServiceProvider, public loadingCtrl: LoadingController) {
     this.idDeputado = this.params.data;
-    this.id = this.params.data;
     console.log(this.idDeputado, 'iddddddd');
     this.presentLoading()
   }
@@ -29,8 +32,24 @@ export class PerfilDeputadoPage {
       this.detalhe = data.dados.ultimoStatus;
     });
 
+    this.service.getProposicoesAutor(this.idDeputado, this.ano).subscribe(data => {
+      this.proposicoes = data.dados;
+    });
 
+    this.service.getReferencias('tiposProposicao').subscribe(data => {
+      this.tiposProposicao = data.dados;
+    })
 
+  }
+
+  doInfinite(): Promise<any> {
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        this.limit += 10;
+        resolve();
+      }, 800);
+    })
   }
 
   presentLoading() {

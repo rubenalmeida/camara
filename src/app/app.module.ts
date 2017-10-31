@@ -14,6 +14,7 @@ import { NotCiasPage } from '../pages/noticias/noticias';
 import { OrgaosPage } from '../pages/orgaos/orgaos';
 import { EventosPage } from '../pages/eventos/eventos';
 import { ProposicoesPage } from '../pages/proposicoes/proposicoes';
+import { ProposicaoDetalhePage } from '../pages/proposicao-detalhe/proposicao-detalhe';
 import { VotacoesPage } from '../pages/votacoes/votacoes';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { LoginPage } from '../pages/login/login';
@@ -39,6 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     OrgaosPage,
     EventosPage,
     ProposicoesPage,
+    ProposicoesPage,
+    ProposicaoDetalhePage,
     VotacoesPage,
     TabsControllerPage,
     LoginPage,
@@ -65,6 +68,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     OrgaosPage,
     EventosPage,
     ProposicoesPage,
+    ProposicaoDetalhePage,
     VotacoesPage,
     TabsControllerPage,
     LoginPage,

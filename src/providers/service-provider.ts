@@ -75,12 +75,20 @@ export class ServiceProvider {
   }
 
   getProposicoes(ano, idProposicao = '') {
-    return this.http.get(this.api + 'proposicoes?ano='+ ano +'&itens=30').map(res => res.json());
+    let dados = '';
+    if (idProposicao) {
+      dados = '/' + idProposicao;
+    }else {
+      dados = '?ano=' + ano
+    }
+
+    return this.http.get(this.api + 'proposicoes' + dados).map(res => res.json());
   }
 
   getProposicoesAutor(idAutor, ano, pagina = 1) {
-    return this.http.get(this.api + 'proposicoes?itens=20&pagina='+ pagina +'&ano='+ ano +'&idAutor='+ idAutor).map(res => res.json());
+    return this.http.get(this.api + 'proposicoes?itens=20&pagina='+ pagina +'&ano='+ ano +'&Autor='+ idAutor).map(res => res.json());
   }
+
   getReferencias(filtros = '') {
     return this.http.get(this.api + 'referencias/' + filtros).map(res => res.json());
   }

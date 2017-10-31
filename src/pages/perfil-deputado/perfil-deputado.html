@@ -119,14 +119,29 @@
       </ion-item>
     </div>
 
-
-    {{idDeputado}}
     <div *ngSwitchCase="'despesas'">
       <despesas-deputado [deputado]="idDeputado"></despesas-deputado>
     </div>
 
     <div *ngSwitchCase="'proposicoes'">
-      <proposicoes-deputado [deputado]="id"></proposicoes-deputado>
+      <div *ngIf="proposicoes.length == 0">
+        <ion-col col-6 style="align-content: center">
+          <ion-spinner name="crescent"></ion-spinner>
+        </ion-col>
+      </div>
+      <ion-card *ngFor="let proposicao of proposicoes | slice:0:limit; let i = index">
+        <ion-card-header>{{proposicao.siglaTipo}}</ion-card-header>
+        <ion-card-content>
+          {{proposicao.ementa}}
+        </ion-card-content>
+      </ion-card>
+
+      <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+        <ion-infinite-scroll-content
+          loadingSpinner="crescent"
+          loadingText="Carregando mais deputados">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
     </div>
   </div>
 </ion-content>
