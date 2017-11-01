@@ -14,6 +14,7 @@ export class ServiceProvider {
 
   api: string = 'https://dadosabertos.camara.leg.br/api/v2/';
 
+
   constructor(public http: Http) {
   }
 
@@ -95,6 +96,12 @@ export class ServiceProvider {
 
   getVotacoes(filtros = '') {
     return this.http.get(this.api + '').map(res => res.json());
+  }
+
+  getYoutube(){
+    return this.http.get(
+      'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC-ZkSRh-7UEuwXJQ9UMCFJA&eventType=live&maxResults=10&order=date&type=video&key=AIzaSyCn08hua-qqKzgu-iWky7bYm9wkzsNx7Rw'
+    ).map(res => res.json());
   }
 
 }

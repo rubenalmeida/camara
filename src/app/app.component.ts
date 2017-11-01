@@ -3,8 +3,6 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-
-
 import { BemVindoPage } from '../pages/bem-vindo/bem-vindo';
 import { PrincipalPage } from '../pages/principal/principal';
 import {TabsControllerPage} from "../pages/tabs-controller/tabs-controller";

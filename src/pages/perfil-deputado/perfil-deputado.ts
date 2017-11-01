@@ -12,6 +12,7 @@ export class PerfilDeputadoPage {
 
   deputado = [];
   detalhe = [];
+  gabinete = [];
   tab: string = 'perfil';
   idDeputado: number;
   proposicoes = [];
@@ -30,6 +31,7 @@ export class PerfilDeputadoPage {
     this.service.getPerfilDeputado(id).subscribe(data => {
       this.deputado = data.dados;
       this.detalhe = data.dados.ultimoStatus;
+      this.gabinete = data.dados.ultimoStatus.gabinete;
     });
 
     this.service.getProposicoesAutor(this.idDeputado, this.ano).subscribe(data => {

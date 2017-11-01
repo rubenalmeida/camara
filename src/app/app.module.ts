@@ -23,6 +23,8 @@ import { BemVindoPage } from '../pages/bem-vindo/bem-vindo';
 import {DespesasDeputadoComponent} from "../components/despesas-deputado/despesas-deputado";
 import {ProposicoesDeputadoComponent} from "../components/proposicoes-deputado/proposicoes-deputado";
 import {ServiceProvider} from '../providers/service-provider';
+import {AccordionComponent} from "../components/accordion/accordion";
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -48,7 +50,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DespesasPage,
     BemVindoPage,
     DespesasDeputadoComponent,
-    ProposicoesDeputadoComponent
+    ProposicoesDeputadoComponent,
+    AccordionComponent
+
   ],
   imports: [
     BrowserModule,

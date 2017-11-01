@@ -8,6 +8,9 @@ import { NavController } from 'ionic-angular';
 export class TVCMaraPage {
 
   constructor(public navCtrl: NavController) {
+
   }
-  
+
+
+
 }

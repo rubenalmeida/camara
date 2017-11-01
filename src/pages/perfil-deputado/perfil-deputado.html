@@ -105,19 +105,104 @@
                 </p>
               </div>
             </ion-item>
+
+            <ion-item style="text-align:center; background: #fff; padding: 2px;">
+              <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+                <p style="margin-top:0px;color:#000000;">
+
+                  {{gabinete.email}}
+                </p>
+              </div>
+            </ion-item>
+            <ion-item style="text-align:center; background: #fff; padding: 2px;">
+              <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
+                <p style="margin-top:0px;color:#000000;">
+
+                  {{gabinete.telefone}}
+                </p>
+              </div>
+            </ion-item>
           </ion-col>
         </ion-row>
       </ion-grid>
 
 
-      <ion-item style="text-align:center; background: #fff; padding: 2px;">
-        <div id="perfilDeputado-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
-            Escolaridade: {{deputado.escolaridade}}
-          </p>
-        </div>
-      </ion-item>
+
     </div>
+
+    <accordion title="Informações Pessoais">
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+      CPF: {{deputado.cpf}}
+        </p>
+      </ion-item>
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Sexo: {{deputado.sexo}}
+        </p>
+      </ion-item>
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Site: <a href="{{deputado.urlWebsite}}">{{deputado.urlWebsite}}</a>
+        </p>
+      </ion-item>
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Rede Social: <a href="{{deputado.redeSocial}}">{{deputado.redeSocial}}</a>
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Data Nascimento: {{deputado.dataNascimento}}<br>
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Data Falecimento: {{deputado.dataFalecimento}}<br>
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Estado Nascimento: {{deputado.ufNascimento}}<br>
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Municipio Nascimento: {{deputado.municipioNascimento}}<br>
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Escolaridade: {{deputado.escolaridade}}<br>
+        </p>
+      </ion-item>
+
+
+    </accordion>
+
+    <accordion title="Gabinete">
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Número:{{gabinete.nome}}, Prédio:{{gabinete.predio}}, Andar:{{gabinete.andar}}, sala:{{gabinete.sala}}
+        </p>
+      </ion-item>
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Telefone:{{gabinete.telefone}}
+        </p>
+      </ion-item>
+      <ion-item>
+        <p style="margin-top:0px;color:#000000;">
+          Email:{{gabinete.email}}
+        </p>
+      </ion-item>
+
+    </accordion>
 
     <div *ngSwitchCase="'despesas'">
       <despesas-deputado [deputado]="idDeputado"></despesas-deputado>
