@@ -75,12 +75,12 @@ export class ServiceProvider {
     return this.http.get(this.api + 'orgaos' + filtros).map(res => res.json());
   }
 
-  getProposicoes(ano, idProposicao = '') {
+  getProposicoes(ano, idProposicao = '', pagina = 1) {
     let dados = '';
     if (idProposicao) {
       dados = '/' + idProposicao;
     }else {
-      dados = '?ano=' + ano
+      dados = '?ano=' + ano + '&pagina=' + pagina;
     }
 
     return this.http.get(this.api + 'proposicoes' + dados).map(res => res.json());
